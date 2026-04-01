@@ -24,23 +24,23 @@ latency_idle_high: range(0,1000)
 currency: empty or regex("^[A-Z]{3}$")
 price_type: any("Pre-Paid", "Post-Paid", "Volume-Based", "Per-Line", "Per-Device", "Per-Location", "Per-Organization", "Per-Person", "Per-Time", "Other")
 price_details: empty or length(0, 500)
-price_recurring: notEmpty and range(0, 9999999999) // TODO: this needs to limit decimal places to 2
-fee_introductory: empty or range(0, 9999999999) // TODO: this needs to limit decimal places to 2
+price_recurring: notEmpty and range(0, 9999999999)
+fee_introductory: empty or range(0, 9999999999)
 fee_introductory_description: empty or length(0, 500)
 contract_required: any("Yes", "No")
 contract_details: empty or length(0, 500)
 contract_terms_uri: empty or uri
-fee_one_time_amount: empty or range(0, 9999999999) // TODO: this needs to limit decimal places to 2
+fee_one_time_amount: empty or range(0, 9999999999)
 fee_one_time_details: empty or length(0, 500)
-fee_recurring: empty or range(0, 9999999999) // TODO: this needs to limit decimal places to 2
+fee_recurring: empty or range(0, 9999999999)
 fee_recurring_description: empty or length(0, 500)
-fee_pass_through_recurring: empty or length(0, 500) // TODO: the decription is a string but it's a number
+fee_pass_through_recurring: empty or length(0, 500)
 fee_pass_through_recurring_description: empty or length(0, 500)
-fee_early_termination: range(0, 9999999999) // TODO: the decription is a string but it's a number, also needs to be limited to 2 decimal places
+fee_early_termination: range(0, 9999999999)
 fee_early_termination_description: empty or length(0, 500)
 government_taxes: any("Included", "Varies", "Not Applicable")
 policy_data_usage: any("Yes", "No")
-fee_data_usage: empty or range(0, 9999999999) // TODO: the decription is a string but it's a number, also needs to be limited to 2 decimal places
+fee_data_usage: empty or range(0, 9999999999)
 fee_data_usage_description: empty or length(0, 500)
 uri_data_usage: empty or uri
 restrictions_apply: any("Yes", "No")
@@ -48,7 +48,7 @@ restrictions_description: empty or length(0, 500)
 uri_policy_network_management: empty or uri
 uri_policy_privacy: empty or uri
 uri_customer_support: empty or uri
-customer_support_phone: empty or regex("^[0-9]{7,15}$") // TODO: min length for phone number is 7
+customer_support_phone: empty or regex("^[0-9]{5,15}$")
 country_code: empty or regex("^[A-Z]{3}$") @optional
 asn: empty or length(0,4294967295) @optional
 uri_policy_additional_terms: empty or uri @optional
